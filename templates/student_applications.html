@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}My Applications{% endblock %}
+
+{% block content %}
+<h3>My Applications</h3>
+
+{% if applications %}
+<table>
+    <tr>
+        <th>Job</th>
+        <th>Status</th>
+    </tr>
+    {% for app in applications %}
+    <tr>
+        <td>{{ jobs[app.job_id].title }}</td>
+        <td><span class="status {{ app.status }}">{{ app.status }}</span></td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No applications found.</p>
+{% endif %}
+
+<br>
+<a href="{{ url_for('student_dashboard') }}">Back</a>
+{% endblock %}

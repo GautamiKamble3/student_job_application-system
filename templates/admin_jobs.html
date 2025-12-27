@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Manage Jobs{% endblock %}
+
+{% block content %}
+<h3>Manage Jobs</h3>
+
+<form method="POST">
+    <label>Job Title</label>
+    <input type="text" name="title" required>
+
+    <label>Description</label>
+    <textarea name="description" required></textarea>
+
+    <input type="submit" value="Add Job">
+</form>
+
+{% if jobs %}
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+    </tr>
+    {% for job in jobs %}
+    <tr>
+        <td>{{ job.title }}</td>
+        <td>{{ job.description }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+<br>
+<a href="{{ url_for('admin_dashboard') }}">Back</a>
+{% endblock %}

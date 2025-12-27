@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<h3>Admin Dashboard</h3>
+<p>Manage jobs and review student applications.</p>
+
+<div class="dashboard-cards">
+    <div class="card">
+        <h4>Manage Jobs</h4>
+        <p>Create and manage job postings.</p>
+        <a href="{{ url_for('admin_jobs') }}">Manage Jobs</a>
+    </div>
+
+    <div class="card">
+        <h4>View Applications</h4>
+        <p>Approve or reject applications.</p>
+        <a href="{{ url_for('admin_application') }}">View Applications</a>
+    </div>
+</div>
+
+<br>
+<a class="btn secondary" href="{{ url_for('admin_dashboard') }}">Back</a>
+<a class="btn secondary" href="{{ url_for('logout') }}">Logout</a>
+{% endblock %}

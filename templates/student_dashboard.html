@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title  %}Student Dashboard{% endblock %}
+
+{% block content %}
+<h3>Student Dashboard</h3>
+<p>Wecome, Manage your job applications from here</p>
+
+<div class="dashboard-cards">
+    <div class="card">
+        <h4>Available Jobs</h4>
+        <p>Browse and apply for jobs.</p>
+        <a href="{{ url_for('student_jobs') }}">View Jobs</a>
+    </div>
+
+    <div class="card">
+        <h4>Applications</h4>
+        <p>Track your application status</p>
+        <a href="{{ url_for('student_applications') }}">View Applications</a>
+    </div>
+</div>
+
+<br>
+
+<a class="btn secondary" href="{{ url_for('student_dashboard') }}">Back</a>
+<a class="btn secondary" href="{{ url_for('logout') }}">Logout</a>
+{% endblock %}

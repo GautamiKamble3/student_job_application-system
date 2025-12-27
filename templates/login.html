@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<h3>Login</h3>
+
+<div class="auth-container">
+    Login heading
+    Login form
+    Register link
+</div>
+
+
+<form method="POST">
+    Email: <input type="email" name="email" required><br><br>
+    Password: <input type="password" name="password" required><br><br>
+
+    <button type="submit">Login</button>
+</form>
+
+<a href="{{url_for('register')}}">New user? Register</a>
+{% endblock %}

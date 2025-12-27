@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Available Jobs{% endblock %}
+
+{% block content %}
+<h3>Available Jobs</h3>
+
+{% if jobs %}
+<div class="job-grid">
+    {% for job in jobs %}
+    <div class="job-card">
+        <h4>{{ job.title }}</h4>
+        <p>{{ job.description }}</p>
+        <a class="btn" href="{{ url_for('apply_job', job_id=job.id) }}">Apply</a>
+    {% endfor %}
+</div>
+{% else %}
+<p>No jobs available right now.</p>
+{% endif %}
+
+<br>
+<a href="{{ url_for('student_dashboard') }}">Back</a>
+{% endblock %}

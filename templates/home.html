@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="hero">
+    <h1>Student Job Application System</h1>
+    <p>
+        A simple and secure platform where students can apply for jobs
+        and administrators can manage applications efficiently.
+    </p>
+
+    <div class="hero-actions">
+        <a class="btn" href="{{ url_for('login') }}">Login</a>
+        <a class="btn secondary" href="{{ url_for('register') }}">Register</a>
+        <img src="{{ url_for('static', filename='images/home_illustrations.svg') }}" alt="Job Illustration">
+    </div>
+</div>
+
+<div class="features">
+    <div class="feature-card">
+        <h4>Student Dashboard</h4>
+        <p>Browse jobs and track application status easily.</p>
+    </div>
+
+    <div class="feature-card">
+        <h4>Admin Control</h4>
+        <p>Create jobs and manage student applications.</p>
+    </div>
+
+    <div class="feature-card">
+        <h4>Secure Login</h4>
+        <p>Role-based authentication using Flask-Login.</p>
+    </div>
+
+    <div class="feature-card">
+        <h4>Clean UI</h4>
+        <p>Simple, responsive, and resume-ready interface.</p>
+    </div>
+</div>
+
+{% endblock %}
